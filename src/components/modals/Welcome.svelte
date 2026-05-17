@@ -8,9 +8,6 @@
 	const bridgeUrl = 'https://bridge.arbitrum.io/';
 	const docsUrl = 'https://docs.cap.io';
 
-	let innerWidth = 640;
-	$: modalWidth = innerWidth <= 600 ? 280 : 640;
-
 	function dismissWelcome() {
 		saveUserSetting('hasSeenWelcome', true);
 		hideModal();
@@ -183,9 +180,7 @@
 	}
 </style>
 
-<svelte:window bind:innerWidth />
-
-<Modal title='Welcome to CAP' width={modalWidth}>
+<Modal title='Welcome to CAP' width={640}>
 	<div class='welcome'>
 		<div class='lede'>
 			CAP is a decentralized perpetuals trading dashboard on Arbitrum. Use it to trade supported markets, provide liquidity through pools, and stake CAP while keeping custody in your wallet.
